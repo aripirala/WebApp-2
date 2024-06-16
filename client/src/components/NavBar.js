@@ -6,8 +6,8 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #004c3f; /* BCG green */
+  color: #ffffff;
   padding: 1rem;
   position: fixed;
   top: 0;
@@ -25,11 +25,11 @@ const NavList = styled.ul`
 const NavItem = styled.li`
   margin: 0 1rem;
   a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     transition: all 0.3s ease;
     &:hover {
-      color: #bada55;
+      color: #d4d4d4; /* Light grey for hover effect */
     }
   }
 `;
@@ -44,6 +44,8 @@ const SearchInput = styled.input`
   border: none;
   border-radius: 4px;
   margin-left: 1rem;
+  background-color: #ffffff;
+  color: #004c3f; /* BCG green */
 `;
 
 const NavBar = ({ onSearch }) => {
@@ -67,9 +69,8 @@ const NavBar = ({ onSearch }) => {
         <NavItem><Link href="/">Home</Link></NavItem>
         <NavItem><Link href="/about">Categories</Link></NavItem>
         <NavItem><Link href="/services">Popular</Link></NavItem>
-        <NavItem><Link href="/contact">  </Link></NavItem>
+        <NavItem><Link href="/contact"> </Link></NavItem>
       </NavList>
-      
     </Nav>
   );
 };

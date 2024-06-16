@@ -100,53 +100,5 @@ const Layout = ({ children, articles = [] }) => {
     );
   };
 
-//   const Layout = ({ children, articles = [] }) => {
-//     // Categorize articles based on their category
-//     const categorizedArticles = articles.reduce((acc, article) => {
-//       if (!acc[article.category]) {
-//         acc[article.category] = [];
-//       }
-//       acc[article.category].push(article);
-//       return acc;
-//     }, {});
   
-//     console.log('Categorized Articles:', categorizedArticles);
-  
-//     return (
-//       <ThemeProvider theme={theme}>
-//         <NavBar />
-//         <Container>
-//           <main>
-//             {children ? (
-//               children
-//             ) : (
-//               Object.keys(categorizedArticles).length > 0 ? (
-//                 Object.keys(categorizedArticles).map((category) => (
-//                   <div key={category}>
-//                     <CategoryTitle>{category}</CategoryTitle>
-//                     <CategoryRow>
-//                       {categorizedArticles[category].slice(0, 3).map((article) => (
-//                         <ArticleWrapper key={article._id}>
-//                           <ArticleCard article={article} />
-//                         </ArticleWrapper>
-//                       ))}
-//                     </CategoryRow>
-//                   </div>
-//                 ))
-//               ) : (
-//                 <p>No articles available</p>
-//               )
-//             )}
-//           </main>
-//           <footer>
-//             <p>&copy; Powered By MarSeer AI</p>
-//           </footer>
-//         </Container>
-//       </ThemeProvider>
-//     );
-//   };
-  
-  
-  
-
 export default Layout;
