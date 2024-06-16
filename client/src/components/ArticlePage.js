@@ -1,3 +1,5 @@
+// client/src/components/ArticlePage.js
+
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
@@ -29,9 +31,6 @@ const SimilarArticle = styled.div`
 `;
 
 const ArticlePage = ({ article, similarArticles }) => {
-  console.log("Article in ArticlePage:", article);
-  console.log("Similar Articles in ArticlePage:", similarArticles);
-
   if (!article) return <p>Loading article...</p>;
 
   return (
@@ -49,7 +48,7 @@ const ArticlePage = ({ article, similarArticles }) => {
           <Link key={similarArticle._id} href={`/article/${similarArticle._id}`} passHref>
             <SimilarArticle>
               <h4>{similarArticle.title}</h4>
-              <p>{similarArticle.content}</p>
+              <p>{similarArticle.content.substring(0, 100)}...</p>
             </SimilarArticle>
           </Link>
         ))}

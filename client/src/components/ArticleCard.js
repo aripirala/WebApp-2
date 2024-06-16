@@ -6,18 +6,17 @@ import { FaEye, FaThumbsUp } from 'react-icons/fa';
 const Card = styled.div`
   background: ${(props) => props.theme.colors.cardBackground};
   padding: 20px;
-  margin: 10px;
+  margin: 5px 0; /* Reduced margin for less distance between cards */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.2s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 200px; /* Fixed height for all cards */
+  border-bottom: 1px solid ${(props) => props.theme.colors.lightGray}; /* Added bottom border for separation */
 
-  &:hover {
-    transform: scale(1.05);
+  &:last-child {
+    border-bottom: none; /* Remove bottom border for the last card */
   }
 `;
 

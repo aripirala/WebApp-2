@@ -58,7 +58,7 @@ const NavBar = ({ onSearch }) => {
 
   return (
     <Nav>
-      <Logo>My Logo</Logo>
+      <Logo>Market Intelligence</Logo>
       <SearchInput
         type="text"
         placeholder="Search..."

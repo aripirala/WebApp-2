@@ -1,8 +1,8 @@
+// client/src/pages/index.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Layout from '../components/Layout';
-import ArticleList from '../components/ArticleList';
-import CategoryList from '../components/CategoryList';
 
 const HomePage = () => {
   const [articles, setArticles] = useState([]);
@@ -24,10 +24,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <Layout articles={articles}>
-      <CategoryList categories={categories} />
-      <ArticleList articles={articles.filter((article) => article.featured)} />
-    </Layout>
+    <Layout articles={articles} categories={categories} />
   );
 };
 
