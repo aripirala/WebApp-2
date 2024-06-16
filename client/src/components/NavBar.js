@@ -1,3 +1,6 @@
+//client/src/components/NavBar.js
+
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
@@ -48,12 +51,19 @@ const SearchInput = styled.input`
   color: #004c3f; /* BCG green */
 `;
 
-const NavBar = ({ onSearch }) => {
+const NavBar = ({ onSearch, onHomeClick, onPopularClick }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
     onSearch(e.target.value);
+  };
+  const handleHomeClick = () => {
+    onHomeClick(); // Notify parent component to handle home click
+  };
+
+  const handlePopularClick = () => {
+    onPopularClick(); // Notify parent component to handle popular click
   };
 
   return (
@@ -66,10 +76,15 @@ const NavBar = ({ onSearch }) => {
         onChange={handleSearchChange}
       />
       <NavList>
-        <NavItem><Link href="/">Home</Link></NavItem>
-        <NavItem><Link href="/about">Categories</Link></NavItem>
-        <NavItem><Link href="/services">Popular</Link></NavItem>
-        <NavItem><Link href="/contact"> </Link></NavItem>
+      <NavItem>
+          <Link href="/" onClick={handleHomeClick}>Home</Link>
+        </NavItem>
+        <NavItem>
+          <Link href="/popular" onClick={handlePopularClick}>Popular</Link>
+        </NavItem>
+        <NavItem>
+          <Link href="/empty"> </Link>
+        </NavItem>
       </NavList>
     </Nav>
   );
